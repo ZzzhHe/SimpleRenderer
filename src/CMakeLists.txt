@@ -5,14 +5,18 @@
 # CMakeLists.txt for Simple-XX/SimpleRenderer.
 
 
-# Automatically gather all source files
-file(GLOB_RECURSE SOURCES "*.cpp" "*.c")
+file(GLOB_RECURSE SOURCES 
+    "*.cpp" 
+    "*.c"
+    "opengl_helper/*.cpp"
+    "opengl_helper/*.c"
+    )
 
 # Create the library
 add_library(${PROJECT_NAME} STATIC ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE
-        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/src/include>
+        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
 )
 
@@ -22,9 +26,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
         ${DEFAULT_LINK_LIB}
-)
-
-
-target_link_libraries(${PROJECT_NAME} PRIVATE
-        glad OpenGL::GL
+        glad
+        OpenGL::GL
 )

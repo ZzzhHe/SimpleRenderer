@@ -44,7 +44,7 @@ set(LOG_FILE_MAX_COUNT 8)
 # Generate configuration header file
 configure_file(
     "${PROJECT_SOURCE_DIR}/cmake/config.h.in"
-    "${PROJECT_SOURCE_DIR}/src/include/config.h"
+    "${PROJECT_SOURCE_DIR}/include/config.h"
 )
 
 # Find and include OpenGL
@@ -52,8 +52,8 @@ find_package(OpenGL REQUIRED)
 find_package(raylib REQUIRED)
 
 # Add glad library
-add_library(glad "${PROJECT_SOURCE_DIR}/src/glad.c")
-target_include_directories(glad PUBLIC "${PROJECT_SOURCE_DIR}/src/include")
+add_library(glad "${PROJECT_SOURCE_DIR}/src/opengl_helper/glad.c")
+target_include_directories(glad PUBLIC "${PROJECT_SOURCE_DIR}/include/opengl_helper/glad")
 
 # Add project subdirectories
 add_subdirectory(src)
