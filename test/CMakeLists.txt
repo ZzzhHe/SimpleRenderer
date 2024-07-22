@@ -36,9 +36,7 @@ link_libraries(
     gtest_main
     ${glog_LIBRARIES}
     SimpleRenderer
-    glad 
     raylib
-    OpenGL::GL
 )
 
 # Add subdirectories for different test types

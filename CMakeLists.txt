@@ -47,13 +47,8 @@ configure_file(
     "${PROJECT_SOURCE_DIR}/src/include/config.h"
 )
 
-# Find and include OpenGL
-find_package(OpenGL REQUIRED)
+# Find and include raylib
 find_package(raylib REQUIRED)
-
-# Add glad library
-add_library(glad "${PROJECT_SOURCE_DIR}/src/glad.c")
-target_include_directories(glad PUBLIC "${PROJECT_SOURCE_DIR}/src/include")
 
 # Add project subdirectories
 add_subdirectory(src)

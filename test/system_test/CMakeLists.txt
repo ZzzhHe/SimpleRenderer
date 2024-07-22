@@ -29,9 +29,7 @@ target_link_options(system_test PRIVATE ${DEFAULT_TEST_LINK_OPTIONS})
 
 # Link libraries
 target_link_libraries(system_test PRIVATE
-    glad
     raylib
-    OpenGL::GL
     ${DEFAULT_LINK_LIB}
 )
 

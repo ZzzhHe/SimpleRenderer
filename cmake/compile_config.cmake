@@ -16,8 +16,6 @@ list(APPEND DEFAULT_LINK_LIB
     tinyobjloader
     Eigen
     ${glog_LIBRARIES}
-    OpenGL::GL
-    glad
     raylib
     OpenMP::OpenMP_CXX
 )

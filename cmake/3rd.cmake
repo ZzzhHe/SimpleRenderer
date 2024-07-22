@@ -198,15 +198,6 @@ else ()
     endif ()
 endif ()
 
-# Find OpenGL
-find_package(OpenGL REQUIRED)
-if (OPENGL_FOUND)
-    include_directories(${OPENGL_INCLUDE_DIR})
-    link_libraries(${OPENGL_LIBRARIES})
-else ()
-    message(FATAL_ERROR "OpenGL not found. Please install OpenGL.")
-endif ()
-
 # Find spdlog
 find_package(spdlog REQUIRED)
 if (NOT spdlog_FOUND)
